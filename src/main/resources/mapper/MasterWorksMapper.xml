@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.MasterWorksMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo.model.MasterWorks">
+        <id property="work_id" column="work_id"  jdbcType="INTEGER" />
+        <result property="image" column="image"  jdbcType="VARCHAR" />
+        <result property="work_name" column="work_name"   jdbcType="VARCHAR" />
+        <result property="work_desc" column="work_desc"   jdbcType="VARCHAR" />
+        <result property="master_id" column="master_id"  jdbcType="INTEGER" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+      image,work_name,work_desc
+    </sql>
+
+    <select id="selectById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from master_works
+        where master_id = #{id,jdbcType=INTEGER}
+    </select>
+
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.PhaseInfoMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo.model.PhaseInfo">
+        <id property="id" column="id" jdbcType="INTEGER" />
+        <result property="seq" column="seq"   jdbcType="INTEGER" />
+        <result property="des" column="des"  jdbcType="VARCHAR" />
+        <result property="image" column="image"  jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+      id,seq,des,image
+    </sql>
+
+    <select id="selectAll"  resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from phase_info
+    </select>
+
+</mapper>

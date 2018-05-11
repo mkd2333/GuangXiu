@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.UserInfoMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo.model.UserInfo">
+        <id property="account" column="account"  jdbcType="INTEGER" />
+        <result property="nickname" column="nickname"   jdbcType="VARCHAR" />
+        <result property="password" column="password" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+      account,password
+    </sql>
+
+    <select id="getAccount"  resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user_info
+        where account = #{account,jdbcType=INTEGER} and  password = #{password,jdbcType=VARCHAR}
+    </select>
+
+</mapper>
+
+
