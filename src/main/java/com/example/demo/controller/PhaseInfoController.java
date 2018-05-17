@@ -2,10 +2,8 @@ package com.example.demo.controller;
 
 import com.example.demo.core.ret.RetResponse;
 import com.example.demo.core.ret.RetResult;
-import com.example.demo.core.ret.ServiceException;
 import com.example.demo.model.PhaseInfo;
 import com.example.demo.service.PhaseInfoService;
-import com.example.demo.util.JudgeVersion;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +20,7 @@ public class PhaseInfoController {
 
 
     @PostMapping("/phases")
-    public RetResult<List<PhaseInfo>> selectById(int version){
+    public RetResult<List<PhaseInfo>> selectAll(int version){
             List<PhaseInfo> phaseInfo = phaseInfoService.selectById(version);
             if(phaseInfo!=null) {
                 return RetResponse.makeOKRsp(phaseInfo);

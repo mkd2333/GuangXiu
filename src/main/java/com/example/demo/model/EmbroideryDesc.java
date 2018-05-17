@@ -39,18 +39,4 @@ public class EmbroideryDesc {
         this.background = background;
     }
 
-    @Service
-    public static class ConfigInfoServiceImpl implements ConfigInfoService {
-
-        @Resource
-        private ConfigInfoMapper configInfoMapper;
-
-        public int getVersion()
-        {
-          int version = configInfoMapper.getVersion();
-            return version;
-
-        }
-
-    }
 }

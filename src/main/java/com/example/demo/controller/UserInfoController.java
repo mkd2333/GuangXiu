@@ -5,15 +5,11 @@ import com.example.demo.core.ret.RetResult;
 import com.example.demo.core.ret.ServiceException;
 import com.example.demo.model.UserInfo;
 import com.example.demo.service.UserInfoService;
-import com.example.demo.util.JudgeVersion;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("GuangXiu/userInfo")

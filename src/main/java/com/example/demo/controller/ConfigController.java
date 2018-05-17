@@ -19,8 +19,8 @@ public class ConfigController {
     private ConfigInfoService configInfoService;
 
     @GetMapping("/version")
-    public RetResult<Integer> selectByVersion(){
-        int version = configInfoService.getVersion();
+    public RetResult<ConfigInfo> selectByVersion(){
+        ConfigInfo version = configInfoService.getVersion();
         return RetResponse.makeOKRsp(version);
     }
 }

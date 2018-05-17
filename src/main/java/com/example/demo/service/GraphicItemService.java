@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface GraphicItemService {
 
-    List<GraphicItem> selectById(Integer version, Integer id);
+    List<GraphicItem> selectById( Integer id);
     int coutById(Integer id);
 }

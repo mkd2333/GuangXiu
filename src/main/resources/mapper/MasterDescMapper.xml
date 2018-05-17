@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.MasterDescMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo.model.MasterDesc">
+        <id property="master_id" column="master_id"  jdbcType="INTEGER" />
+        <result property="avatar" column="avatar"   jdbcType="VARCHAR" />
+        <result property="name" column="name"   jdbcType="VARCHAR" />
+        <result property="address" column="address"   jdbcType="VARCHAR" />
+        <result property="contract" column="contract"   jdbcType="VARCHAR" />
+        <result property="honor" column="honor"   jdbcType="VARCHAR" />
+        <result property="introduction" column="introduction"   jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+     avatar,name,address,contract,honor,introduction
+    </sql>
+
+    <select id="selectById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from master_desc
+        where master_id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectMaster"  resultMap="BaseResultMap">
+        select avatar,name,master_id
+        from master_desc
+    </select>
+
+</mapper>

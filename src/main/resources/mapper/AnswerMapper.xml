@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.AnswerMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo.model.Answer">
+        <id property="id" column="id"  jdbcType="INTEGER" />
+        <result property="seq" column="seq"   jdbcType="INTEGER" />
+        <result property="image" column="image"   jdbcType="VARCHAR" />
+        <result property="question" column="question"   jdbcType="VARCHAR" />
+        <result property="choice_A" column="choice_A"   jdbcType="VARCHAR" />
+        <result property="choice_B" column="choice_B"   jdbcType="VARCHAR" />
+        <result property="choice_C" column="choice_C"   jdbcType="VARCHAR" />
+        <result property="choice_D" column="choice_D"   jdbcType="VARCHAR" />
+        <result property="answer" column="answer"   jdbcType="INTEGER" />
+        <result property="explanation" column="explanation"   jdbcType="VARCHAR" />
+
+    </resultMap>
+
+    <sql id="Base_Column_List">
+     seq,image,question,choice_A,choice_B,choice_C,choice_D,answer,explanation
+    </sql>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from answer
+    </select>
+
+</mapper>

@@ -1,16 +1,13 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.core.ret.ServiceException;
 import com.example.demo.dao.GraphicItemMapper;
+import com.example.demo.model.ConfigInfo;
 import com.example.demo.model.GraphicItem;
+import com.example.demo.service.ConfigInfoService;
 import com.example.demo.service.GraphicItemService;
-import com.example.demo.util.JudgeVersion;
-import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.rmi.server.ServerCloneException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,16 +15,13 @@ public class GraphicItemServiceImpl implements GraphicItemService {
 
     @Resource
     private GraphicItemMapper graphicItemMapper;
-    @Resource
-    private JudgeVersion judgeVersion;
+
 
     @Override
-    public List<GraphicItem> selectById(Integer version, Integer id) {
-        if (judgeVersion.isNew(version)) {
+    public List<GraphicItem> selectById( Integer id) {
+
             List<GraphicItem> list=graphicItemMapper.selectById(id);
             return list;
-        }
-        return null;
     }
 
     @Override

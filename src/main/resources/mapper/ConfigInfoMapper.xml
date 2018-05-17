@@ -3,12 +3,27 @@
 <mapper namespace="com.example.demo.dao.ConfigInfoMapper">
     <resultMap id="BaseResultMap" type="com.example.demo.model.ConfigInfo">
         <id property="id" column="id"  jdbcType="INTEGER" />
-        <result property="version" column="version"  jdbcType="INTEGER" />
+        <result property="ver_origin" column="ver_origin"  jdbcType="INTEGER" />
+        <result property="ver_meanning" column="ver_meanning"  jdbcType="INTEGER" />
+        <result property="ver_phase" column="ver_phase"  jdbcType="INTEGER" />
+        <result property="ver_development" column="ver_development"  jdbcType="INTEGER" />
+        <result property="ver_art" column="ver_art"  jdbcType="INTEGER" />
+        <result property="ver_embroidery" column="ver_embroidery"  jdbcType="INTEGER" />
+        <result property="ver_stitch" column="ver_stitch"  jdbcType="INTEGER" />
+        <result property="ver_thread" column="ver_thread"  jdbcType="INTEGER" />
+        <result property="ver_pergola" column="ver_pergola"  jdbcType="INTEGER" />
+        <result property="ver_desc" column="ver_desc"  jdbcType="INTEGER" />
+        <result property="ver_master" column="ver_master"  jdbcType="INTEGER" />
+        <result property="ver_masterwork" column="ver_masterwork"  jdbcType="INTEGER" />
+        <result property="ver_video" column="ver_video"  jdbcType="INTEGER" />
+        <result property="ver_answer" column="ver_answer"  jdbcType="INTEGER" />
+        <result property="ver_needle" column="ver_needle"  jdbcType="INTEGER" />
+
     </resultMap>
 
 
-    <select id="getVersion"  resultType="int">
-        select version
+    <select id="getVersion"  resultMap="BaseResultMap">
+        select *
         from config_info
     </select>
 

@@ -2,10 +2,8 @@ package com.example.demo.controller;
 
 import com.example.demo.core.ret.RetResponse;
 import com.example.demo.core.ret.RetResult;
-import com.example.demo.core.ret.ServiceException;
 import com.example.demo.model.ThreadInfo;
 import com.example.demo.service.ThreadInfoService;
-import com.example.demo.util.JudgeVersion;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

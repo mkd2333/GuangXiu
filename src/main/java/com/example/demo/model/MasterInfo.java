@@ -6,7 +6,7 @@ public class MasterInfo {
     * 主键*/
     private String master_id;
 
-    private String portraits;
+    private String avatar;
 
     private String name;
 
@@ -18,12 +18,12 @@ public class MasterInfo {
         this.master_id = master_id;
     }
 
-    public String getPortraits() {
-        return portraits;
+    public String getAvatar() {
+        return avatar;
     }
 
-    public void setPortraits(String portraits) {
-        this.portraits = portraits;
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     public String getName() {

@@ -8,5 +8,10 @@ import java.util.List;
 
 public interface MasterWorksMapper {
 
-    List<MasterWorks> selectById(@Param("id") Integer id);
+    List<MasterWorks> selectByAuthor(@Param("author") Integer author);
+
+    List<MasterWorks> selectByType(@Param("type") Integer type);
+
+    List<MasterWorks> selectAll();
+
 }
